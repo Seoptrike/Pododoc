@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 버튼들을 위한 레이아웃 -->
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/btn_under_50000"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/pododoc_color"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:text="초급자 와인" />
+
+        <Button
+            android:id="@+id/btn_under_150000"
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/pododoc_color"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:text="중급자 와인" />
+
+        <Button
+            android:id="@+id/btn_over_150000"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/pododoc_color"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:text="고급자 와인" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!-- 레드와인 리스트를 위한 RecyclerView -->
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/recred"
+            android:paddingBottom="-10dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/red_wine_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:orientation="horizontal" />
+
+        <!-- 화이트와인 리스트를 위한 RecyclerView -->
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/recwhite"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/white_wine_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:orientation="horizontal" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MypageFragment"
+    android:orientation="vertical"
+    android:padding="30dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_marginTop="10dp"
+            android:id="@+id/photo"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:src="@drawable/mypage"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#EEE"
+            />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="0dp"
+            android:layout_weight="6"
+            android:layout_height="wrap_content"
+            android:hint="email"
+            android:enabled="false"
+            android:layout_marginHorizontal="10dp"
+            android:textColor="#fff"
+            />
+
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:text="Log Out"
+            android:backgroundTint="@color/pododoc_color"
+            android:textColor="#FFFFFF"
+            />
+    </LinearLayout>
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/mywine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My Wines"
+        android:backgroundTint="@color/pododoc_color"
+        android:textColor="#FFFFFF"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:src="@drawable/ratingtitle"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-20dp"
+        android:orientation="vertical">
+        <ImageView
+            android:src="@drawable/ic_launcher_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ratingGraph"/>
+    </LinearLayout>
+</LinearLayout>
