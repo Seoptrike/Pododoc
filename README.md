@@ -4,9 +4,18 @@ Pododoc은 사용자의 와인 시음 기록과 평점을 기반으로 머신러
 
 ## 📸 스크린샷
 
-![메인 화면](./image/image1.png) ![와인 목록](./image/image2.png) ![와인 상세](./image/image3.png) ![추천 결과](./image/image4.png)
+<p align="center">
+  <img src="./image/image1.png" width="200" alt="메인 화면"/>
+  <img src="./image/image2.png" width="200" alt="와인 목록"/>
+  <img src="./image/image3.png" width="200" alt="와인 상세"/>
+  <img src="./image/image4.png" width="200" alt="추천 결과"/>
+</p>
 
-![마이페이지](./image/image5.png) ![통계 차트](./image/image6.png) ![검색 기능](./image/image7.png)
+<p align="center">
+  <img src="./image/image5.png" width="200" alt="마이페이지"/>
+  <img src="./image/image6.png" width="200" alt="통계 차트"/>
+  <img src="./image/image7.png" width="200" alt="검색 기능"/>
+</p>
 
 ## ✨ 프로젝트 개요
 
