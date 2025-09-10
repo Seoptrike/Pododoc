@@ -5,21 +5,21 @@ Pododoc은 사용자의 와인 시음 기록과 평점을 기반으로 머신러
 ## 📸 스크린샷
 
 <p align="center">
-  <img src="./image/image1.png" width="200" alt="메인 화면"/>
-  <img src="./image/image2.png" width="200" alt="와인 목록"/>
-  <img src="./image/image3.png" width="200" alt="와인 상세"/>
-  <img src="./image/image4.png" width="200" alt="추천 결과"/>
+ <img src="./image/image1.png" width="200" alt="메인 화면"/>
+ <img src="./image/image2.png" width="200" alt="와인 목록"/>
+ <img src="./image/image3.png" width="200" alt="와인 상세"/>
+ <img src="./image/image4.png" width="200" alt="추천 결과"/>
 </p>
 
 <p align="center">
-  <img src="./image/image5.png" width="200" alt="마이페이지"/>
-  <img src="./image/image6.png" width="200" alt="통계 차트"/>
-  <img src="./image/image7.png" width="200" alt="검색 기능"/>
+ <img src="./image/image5.png" width="200" alt="마이페이지"/>
+ <img src="./image/image6.png" width="200" alt="통계 차트"/>
+ <img src="./image/image7.png" width="200" alt="검색 기능"/>
 </p>
 
 ## ✨ 프로젝트 개요
 
-기존의 데이터베이스 기반 추천 시스템의 한계를 극복하고자, 사용자의 실제 시음 데이터를 바탕으로 머신러닝 예측 모델과 유사도 측정 알고리즘을 적용하여 정교하고 개인화된 와인 추천 경험을 제공합니다.
+안드로이드와 Python 실습을 목적으로 한 2인 팀 프로젝트(기여도 50%)로, 팀원 간 공통 관심사인 와인을 주제로 개발했습니다. Vivino 웹/앱을 벤치마킹하여 기존 데이터베이스 기반 추천 시스템의 한계를 극복하고자, 사용자의 실제 시음 데이터를 바탕으로 머신러닝 예측 모델과 유사도 측정 알고리즘을 적용한 개인화된 와인 추천 경험을 제공합니다.
 
 ## 🚀 주요 기능
 
@@ -29,14 +29,15 @@ Pododoc은 사용자의 와인 시음 기록과 평점을 기반으로 머신러
 - **개인 와인 컬렉션**: 마신 와인들의 히스토리 관리
 
 ### 🤖 AI 기반 추천
-- **평점 예측 모델**: scikit-learn 기반 머신러닝으로 미시음 와인의 예상 평점 예측
+- **평점 예측 모델**: scikit-learn 기반 GradientBoosting으로 미시음 와인의 예상 평점 예측
+- **개인 취향 분석**: 사용자 리뷰 별점 기반 가중치 부여로 개인 취향 패턴 학습
+- **가중 최빈값 추천**: 높은 평점을 받은 와인 특성에 가중치를 부여하여 유사한 특성의 와인 추천
 - **유사도 기반 추천**: 유클리드 거리를 이용한 유사 와인 추천
-- **개인화된 추천**: 사용자의 취향을 학습하여 맞춤형 와인 제안
 
 ### 📊 데이터 시각화
 - **취향 분석**: 선호하는 와인 품종, 국가별 통계
 - **평점 분포**: 개인의 와인 평가 패턴 시각화
-- **지역별 분석**: 지도 기반 와인 생산지 정보
+- **지역별 분석**: Folium을 활용한 지도 기반 와인 생산지 정보
 
 ### 🔍 검색 및 탐색
 - **고급 검색**: 품종, 국가, 가격대별 와인 검색
@@ -48,27 +49,62 @@ Pododoc은 사용자의 와인 시음 기록과 평점을 기반으로 머신러
 ### Backend & AI
 - **Python 3.x**: 메인 개발 언어
 - **Flask 3.0.3**: RESTful API 서버 프레임워크
-- **scikit-learn 1.5.1**: 머신러닝 모델 구현
+- **scikit-learn 1.5.1**: 머신러닝 모델 구현 (GradientBoosting)
 - **pandas 2.2.2**: 데이터 분석 및 처리
 - **matplotlib 3.9.1**: 데이터 시각화
 - **folium 0.17.0**: 지도 기반 시각화
+- **Jupyter Notebook**: 데이터 분석 및 모델 실험
 
 ### Database & Cloud
-- **Firebase Admin 6.5.0**: 실시간 데이터베이스 및 인증
-- **Google Sheets API**: 데이터 저장 및 관리
+- **Google Sheets API**: 클라우드 기반 데이터 저장 및 관리
 - **gspread 6.1.2**: Google Sheets 연동
+- **Firebase Admin 6.5.0**: 실시간 데이터베이스 및 인증
 
 ### Frontend
 - **Android (Java)**: 네이티브 안드로이드 개발
 - **Retrofit2**: HTTP 통신 라이브러리
 - **Firebase SDK**: 클라우드 서비스 연동
 
+### Data Collection
+- **Selenium**: Vivino 웹사이트 크롤링
+
+## 🔧 개발 과정 및 도전 과제
+
+### 데이터 수집 및 전처리
+- **Vivino 크롤링**: Selenium을 활용하여 5,000개 와인 데이터 수집
+- **무한스크롤 대응**: 동적 로딩 환경에서 XPath 기반 요소 추출 및 주기적 스크롤 구현
+- **데이터 정제**: 
+ - 수치형 데이터(산미, 당도, 텍스처, 바디감) 0-1 정규화
+ - 텍스트형 맛 표현 3가지를 One-Hot Encoder로 벡터화
+ - StandardScaler를 통한 7가지 특성 벡터 표준화
+
+### 머신러닝 모델 개발
+- **모델 비교**: sklearn 7가지 회귀 모델 성능 비교 분석
+- **최종 선택**: R² 점수 기준으로 GradientBoosting 모델 채택
+- **모델 선택의 현실**: 비전공자로서 이론적 근거보다는 "시각적으로 비슷하거나 맛이 비슷하네"라는 경험적, 주관적 판단으로 모델 검증
+
+### 배포 환경 전환
+- **초기 계획**: Docker 컨테이너 기반 배포
+- **데이터 저장 이슈**: CSV/Excel 파일의 컨테이너 포함 한계 경험
+- **클라우드 전환**: Google Sheets API 활용으로 클라우드 데이터베이스 구현
+- **배포 시도**: Heroku 배포 도전 (시간 제약으로 미완성)
+
+### 성능 및 제한사항
+- **응답 속도**: Google Sheets API 사용으로 인한 성능 저하
+- **프로젝트 기간**: 2주 제한으로 UX 최적화 및 완전한 배포 미완성
+- **최종 결과**: APK 형태로 프로토타입 완성 및 수업 발표 진행
+
 ## 📊 머신러닝 모델
 
 ### 와인 평점 예측
-- **알고리즘**: Random Forest Regressor
+- **알고리즘**: GradientBoosting Regressor
 - **특성**: 알코올 도수, 산도, 당도, 타닌 등 와인의 화학적 특성
-- **평가지표**: MAE, RMSE, R² 스코어
+- **전처리**: One-Hot Encoder + StandardScaler
+
+### 개인화 추천 알고리즘
+- **가중치 계산**: 사용자 별점을 기반으로 와인 특성별 가중치 산정
+- **가중 최빈값 분석**: 높은 평점을 받은 와인 특성의 빈도 기반 선호 패턴 도출
+- **추천 로직**: 선호 특성과 유사한 와인들을 우선순위로 추천
 
 ### 유사도 기반 추천
 - **거리 측정**: 유클리드 거리 (Euclidean Distance)
